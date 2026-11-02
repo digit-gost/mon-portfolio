@@ -1,10 +1,8 @@
-import "./SectionIntro.css";
-
-export default function SectionIndex({ index, kicker }) {
+export default function SectionIndex({ index, kicker, kickerClassName = "" }) {
   return (
-    <div className="section-index">
-      <span>[{index}]</span>
-      <span>{kicker}</span>
+    <div className="flex gap-[1.3rem] font-mono text-[.7rem] leading-[normal] font-medium text-[#d1dbea] uppercase">
+      <span className="text-acid">[{index}]</span>
+      <span className={kickerClassName}>{kicker}</span>
     </div>
   );
 }

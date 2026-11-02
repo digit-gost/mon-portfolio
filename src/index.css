@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* Breakpoints du design (max-width) : tablet:… et phone:… */
+@custom-variant tablet (@media (max-width: 1050px));
+@custom-variant phone (@media (max-width: 720px));
+/* Curseur personnalisé : uniquement souris + animations autorisées */
+@custom-variant cursor-ok (@media (pointer: fine) and (prefers-reduced-motion: no-preference));
+
+@theme static {
+  --color-night: #070a12;
+  --color-surface: #0d1729;
+  --color-ink: #f7fbff;
+  --color-muted: #b0bed3;
+  --color-line: #304361;
+  --color-acid: #6594ff;
+  --color-aqua: #76ddff;
+  --color-iris: #8e91ff;
+  --color-coral: #ff8d70;
+
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  --default-transition-timing-function: ease;
+
+  --animate-grid-drift: grid-drift 18s linear infinite;
+  --animate-status-pulse: status-pulse 2s ease infinite;
+  --animate-hero-enter: hero-enter 800ms cubic-bezier(.2, .7, .2, 1) both;
+  --animate-avatar-float: avatar-float 5s ease-in-out infinite;
+
+  @keyframes grid-drift { to { background-position: 4rem 4rem; } }
+  @keyframes status-pulse { 50% { opacity: .45; } }
+  @keyframes hero-enter {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes avatar-float {
+    0%, 100% { transform: translateY(0) rotate(-.4deg); }
+    50% { transform: translateY(-.75rem) rotate(.4deg); }
+  }
+  @keyframes avatar-orbit { to { stroke-dashoffset: -68; } }
+  @keyframes avatar-idle-wave {
+    0%, 72%, 100% { transform: rotate(0); }
+    78% { transform: rotate(-8deg); }
+    84% { transform: rotate(6deg); }
+    90% { transform: rotate(-6deg); }
+    96% { transform: rotate(3deg); }
+  }
+  @keyframes avatar-blink {
+    0%, 58%, 62%, 100% { transform: scaleY(1); }
+    60% { transform: scaleY(.08); }
+  }
+  @keyframes avatar-glint {
+    0%, 55% { stroke-dashoffset: 42; opacity: .15; }
+    76% { stroke-dashoffset: 0; opacity: .9; }
+    100% { stroke-dashoffset: -42; opacity: .15; }
+  }
+  @keyframes avatar-scan {
+    0%, 100% { stroke-dashoffset: 90; opacity: .35; }
+    50% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes avatar-activate {
+    0%, 100% { transform: scale(1); }
+    45% { transform: scale(1.035); }
+  }
+  @keyframes avatar-nod {
+    0%, 100% { transform: rotate(0) translateY(0); }
+    35% { transform: rotate(-3deg) translateY(4px); }
+    68% { transform: rotate(2deg) translateY(-2px); }
+  }
+  @keyframes avatar-pin-pulse {
+    50% { opacity: .45; filter: drop-shadow(0 0 18px var(--color-aqua)); }
+  }
+  @keyframes avatar-active-wave {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(12deg); }
+  }
+  @keyframes avatar-left-pump {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-7px) rotate(4deg); }
+  }
+  @keyframes avatar-particle {
+    0%, 100% { opacity: 0; transform: translateY(.5rem) rotate(45deg) scale(.5); }
+    45% { opacity: 1; }
+    70% { opacity: .7; transform: translateY(-.7rem) rotate(135deg) scale(1); }
+  }
+  @keyframes project-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(.88); opacity: .5; }
+    50% { transform: translate(-50%, -50%) scale(1.12); opacity: .72; }
+  }
+  @keyframes project-action-icon {
+    0% { transform: rotate(0) scale(1); }
+    45% { transform: rotate(-12deg) scale(1.18); }
+    72% { transform: rotate(5deg) scale(1.1); }
+    100% { transform: rotate(0) scale(1); }
+  }
+  @keyframes project-preview-icon {
+    0% { transform: translate(0, 0) scale(1); }
+    45% { transform: translate(.18rem, -.18rem) scale(1.16); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+}
+
+/* Accessibilité : coupe animations et transitions si l'utilisateur le demande */
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation: none !important;
+      transition-duration: .01ms !important;
+    }
+  }
+}
