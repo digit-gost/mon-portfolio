@@ -1,0 +1,5 @@
+.page-section { padding: 8rem 4vw; border-bottom: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  .page-section { padding: 5.5rem 1.2rem; }
+}

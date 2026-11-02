@@ -1,0 +1,54 @@
+.avatar-wrap { --look-x: 0px; --look-y: 0px; --tilt-x: 0deg; --tilt-y: 0deg; align-self: end; justify-self: center; width: min(42vw, 34rem); position: relative; z-index: 2; animation: avatar-float 5s ease-in-out infinite; transform-origin: center bottom; cursor: crosshair; }
+@keyframes avatar-float {
+  0%, 100% { transform: translateY(0) rotate(-.4deg); }
+  50% { transform: translateY(-.75rem) rotate(.4deg); }
+}
+.avatar-wrap:focus-visible { outline: 1px solid var(--cyan); outline-offset: .7rem; border-radius: 45%; }
+.avatar-message {
+  position: absolute;
+  z-index: 5;
+  top: 29%;
+  right: -10%;
+  padding: .65rem .8rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  border: 1px solid rgba(78,217,255,.6);
+  background: rgba(7,10,18,.82);
+  color: var(--cyan);
+  font: 500 .62rem var(--mono);
+  letter-spacing: .1em;
+  opacity: 0;
+  transform: translateX(-.6rem) scale(.9);
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+.avatar-message i { width: .35rem; height: .35rem; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 .7rem var(--cyan); }
+.avatar-wrap.is-active .avatar-message { opacity: 1; transform: translateX(0) scale(1); }
+.avatar-particles { position: absolute; inset: 8% 2% 10%; z-index: 4; pointer-events: none; }
+.avatar-particles i { position: absolute; width: .3rem; height: .3rem; border: 1px solid var(--cyan); opacity: 0; transform: rotate(45deg); }
+.avatar-particles i:nth-child(1) { left: 9%; top: 25%; }
+.avatar-particles i:nth-child(2) { right: 7%; top: 43%; }
+.avatar-particles i:nth-child(3) { left: 18%; bottom: 18%; }
+.avatar-particles i:nth-child(4) { right: 17%; bottom: 28%; }
+.avatar-wrap.is-active .avatar-particles i { animation: avatar-particle 1.8s ease-in-out infinite; }
+.avatar-wrap.is-active .avatar-particles i:nth-child(2) { animation-delay: 300ms; }
+.avatar-wrap.is-active .avatar-particles i:nth-child(3) { animation-delay: 600ms; }
+.avatar-wrap.is-active .avatar-particles i:nth-child(4) { animation-delay: 900ms; }
+@keyframes avatar-particle {
+  0%, 100% { opacity: 0; transform: translateY(.5rem) rotate(45deg) scale(.5); }
+  45% { opacity: 1; }
+  70% { opacity: .7; transform: translateY(-.7rem) rotate(135deg) scale(1); }
+}
+.avatar-label { position: absolute; z-index: 2; color: #c0cde0; font: 500 .62rem var(--mono); letter-spacing: .1em; }
+.avatar-label--top { top: 13%; right: 0; }
+.avatar-label--bottom { bottom: 6%; left: -5%; }
+
+@media (max-width: 720px) {
+  .avatar-wrap { width: min(100%, 28rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-wrap { animation: none; }
+}

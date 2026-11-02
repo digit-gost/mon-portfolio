@@ -1,0 +1,2 @@
+.tag-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag-list span { padding: .45rem .66rem; border: 1px solid #3c4d67; color: #d0d9e7; font: 500 .62rem var(--mono); }

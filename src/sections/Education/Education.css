@@ -1,0 +1,51 @@
+.education {
+  position: relative;
+  overflow: hidden;
+  background: #0b1220;
+}
+.education::before {
+  content: "";
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  right: -12rem;
+  top: -12rem;
+  border-radius: 50%;
+  background: var(--acid);
+  opacity: .1;
+  filter: blur(7rem);
+}
+.education-timeline { position: relative; margin-left: 25%; border-top: 1px solid #35445d; }
+.education-row {
+  min-height: 14rem;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 5rem 11rem 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+  border-bottom: 1px solid #35445d;
+  transition: padding-left 280ms ease, background 280ms ease;
+}
+.education-row:hover { padding-left: 1rem; background: linear-gradient(90deg, rgba(79,130,255,.1), transparent 78%); }
+.education-row__index { display: grid; gap: .45rem; }
+.education-row__index span { color: #8fb2ff; font: 500 .63rem var(--mono); }
+.education-row__index strong { color: #53627a; font: 300 1.6rem var(--mono); }
+.education-row__date { color: #c5d1e2; font: 500 .65rem/1.6 var(--mono); text-transform: uppercase; }
+.education-row__content h3 { margin: 0 0 .5rem; font-size: clamp(1.35rem,2vw,2rem); font-weight: 500; letter-spacing: -.03em; }
+.education-row__content strong { color: var(--cyan); font: 500 .65rem var(--mono); text-transform: uppercase; }
+.education-row__content p { max-width: 38rem; margin: 1.1rem 0 0; color: var(--muted); font-size: .86rem; line-height: 1.65; }
+.education-row__marker { padding-right: 1rem; color: transparent; -webkit-text-stroke: 1px #3f506d; font: 300 2.2rem var(--mono); transition: color 250ms ease, transform 250ms ease; }
+.education-row:hover .education-row__marker { color: var(--acid); transform: translateX(-.5rem); }
+
+@media (max-width: 1050px) {
+  .education-timeline { margin-left: 0; }
+  .education-row { grid-template-columns: 4rem 9rem 1fr auto; gap: 1.2rem; }
+}
+
+@media (max-width: 720px) {
+  .education-row { grid-template-columns: 3rem 1fr auto; gap: 1rem; }
+  .education-row__date { grid-column: 2; }
+  .education-row__content { grid-column: 2 / -1; }
+  .education-row__marker { grid-column: 3; grid-row: 1; font-size: 1.3rem; }
+}

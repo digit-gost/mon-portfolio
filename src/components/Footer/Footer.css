@@ -1,0 +1,18 @@
+.site-footer { padding: 5rem 4vw 2rem; background: #050609; }
+.footer-brand { display: flex; justify-content: space-between; align-items: end; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.footer-brand span { color: var(--acid); font: 400 .65rem var(--mono); }
+.footer-brand strong { font-size: clamp(3.5rem,9vw,10rem); line-height: .75; letter-spacing: -.08em; }
+.footer-links { display: flex; gap: .7rem; padding: 2rem 0 5rem; font: 400 .64rem var(--mono); text-transform: uppercase; }
+.footer-links a { min-height: 2.6rem; padding: 0 .9rem; display: flex; align-items: center; gap: .55rem; border: 1px solid var(--line); transition: color 200ms ease, border-color 200ms ease, transform 200ms ease; }
+.footer-links svg { width: .9rem; height: .9rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.footer-links .social-icon-dot { fill: currentColor; stroke: none; }
+.footer-links a:hover { color: var(--acid); border-color: var(--acid); transform: translateY(-2px); }
+.footer-meta { display: flex; justify-content: space-between; color: #9da9bb; font: 500 .62rem var(--mono); text-transform: uppercase; }
+
+@media (max-width: 720px) {
+  .site-footer { padding: 4rem 1.2rem 2rem; }
+  .footer-brand { display: block; }
+  .footer-brand strong { display: block; margin-top: 2rem; font-size: 16vw; }
+  .footer-links { flex-wrap: wrap; padding-bottom: 4rem; }
+  .footer-meta { display: grid; gap: .7rem; }
+}
