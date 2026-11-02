@@ -1,13 +1,13 @@
 export const projects = [
   {
     number: "01",
-    title: "SunuMarket",
-    category: "Plateforme e-commerce",
+    title: "CyberPong Modern",
+    category: "Arcade / Jeu vidéo",
     description:
-      "Une marketplace locale pensée pour simplifier la vente en ligne, le suivi des commandes et la gestion de catalogue pour les commerçants.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
+      "Réinterprétation cyberpunk du jeu Pong, développée en C++17 avec SFML. Projet réalisé dans le cadre du module C++ et Bibliothèques Graphiques.",
+    stack: ["C++", "CMake", "SFML", "Clang", "GCC", "MSVC"],
     color: "violet",
-    metric: "Commerce / SaaS",
+    metric: "GameDev / C++",
   },
   {
     number: "02",
