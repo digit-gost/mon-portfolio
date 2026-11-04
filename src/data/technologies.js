@@ -3,7 +3,7 @@ export const DEVICON_BASE_URL = "https://cdn.jsdelivr.net/gh/devicons/devicon@la
 export const technologies = [
   {
     group: "Front-end",
-    count: "08",
+    count: "09",
     items: [
       { name: "React", icon: "react/react-original.svg" },
       { name: "Vue.js", icon: "vuejs/vuejs-original.svg" },
@@ -18,7 +18,7 @@ export const technologies = [
   },
   {
     group: "Back-end & Data",
-    count: "06",
+    count: "09",
     items: [
       { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
       { name: "Express", icon: "express/express-original.svg" },
@@ -33,9 +33,10 @@ export const technologies = [
   },
   {
     group: "Outils & Cloud",
-    count: "06",
+    count: "11",
     items: [
       { name: "Git", icon: "git/git-original.svg" },
+      { name:"VS Code", icon: "vscode/vscode-original.svg" },
       { name: "Netlify", icon: "netlify/netlify-original.svg" },
       { name: "Figma", icon: "figma/figma-original.svg" },
       { name: "Canva", icon: "canva/canva-original.svg" },
@@ -43,7 +44,22 @@ export const technologies = [
       { name: "Vercel", icon: "vercel/vercel-original.svg" },
       { name: "GitHub", icon: "github/github-original.svg" },
       { name: "SFML", icon: "sfml/sfml-original.svg" },
+      { name: "CMake", icon: "cmake/cmake-original.svg" },
       { name: "GitLab", icon: "gitlab/gitlab-original.svg" },
     ],
+  },
+  {
+    group: "IA Harness",
+    count: "07", // Passez à "08" si vous gardez DeepSeek
+    items: [
+      { name: "Claude",       icon: "https://jsdelivr.net" },
+      { name: "Gemini",       icon: "https://jsdelivr.net" },
+      { name: "ChatGPT",      icon: "https://jsdelivr.net" },
+      { name: "Copilot",      icon: "https://jsdelivr.net" },
+      { name: "Cursor Agent", icon: "https://jsdelivr.net" },
+      { name: "BlackBox",     icon: "https://jsdelivr.net" },
+      { name: "Perplexity",   icon: "https://jsdelivr.net" },
+      { name: "DeepSeek",     icon: "https://jsdelivr.net" }
+    ],  
   },
 ];

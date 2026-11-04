@@ -18,6 +18,13 @@ export default function EducationRow({ item, index }) {
           {item.place}
         </strong>
         <p className="mt-[1.1rem] max-w-152 text-[.86rem] leading-[1.65] text-muted">{item.detail}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {item.technologies.map((tech, i) => (
+            <span key={i} className="font-mono text-[.65rem] leading-[normal] font-medium text-acid uppercase transition duration-250 hover:text-aqua border p-1 border-acid hover:border-aqua">
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
       <span className="pr-4 font-mono text-[2.2rem] leading-[normal] font-light text-transparent transition duration-250 [-webkit-text-stroke:1px_#3f506d] group-hover:-translate-x-2 group-hover:text-acid phone:col-[3] phone:row-[1] phone:text-[1.3rem]">
         {`{0${index + 1}}`}
