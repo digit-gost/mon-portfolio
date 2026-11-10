@@ -50,16 +50,16 @@ export const technologies = [
   },
   {
     group: "IA Harness",
-    count: "07", // Passez à "08" si vous gardez DeepSeek
+    count: "08",
     items: [
-      { name: "Claude",       icon: "https://jsdelivr.net" },
-      { name: "Gemini",       icon: "https://jsdelivr.net" },
-      { name: "ChatGPT",      icon: "https://jsdelivr.net" },
-      { name: "Copilot",      icon: "https://jsdelivr.net" },
-      { name: "Cursor Agent", icon: "https://jsdelivr.net" },
-      { name: "BlackBox",     icon: "https://jsdelivr.net" },
-      { name: "Perplexity",   icon: "https://jsdelivr.net" },
-      { name: "DeepSeek",     icon: "https://jsdelivr.net" }
-    ],  
+      { name: "Claude", icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/claude-ai.svg" },
+      { name: "Gemini", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png" },
+      { name: "ChatGPT", icon: "https://cdn-icons-png.flaticon.com/512/12222/12222588.png" },
+      { name: "Copilot", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/copilot-icon.png" },
+      { name: "Cursor Agent", icon: "https://logo-teka.com/wp-content/uploads/2026/07/cursor-ai-icon-logo-263x300.png" },
+      { name: "BlackBox", icon: "https://www.blackbox.ai/favicon.ico" },
+      { name: "Perplexity", icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/perplexity.svg" },
+      { name: "DeepSeek", icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/deepseek.svg" }
+    ],
   },
 ];

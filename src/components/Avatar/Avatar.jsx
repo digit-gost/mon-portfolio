@@ -1,47 +1,571 @@
+
 export default function Avatar() {
   return (
     <svg
-      className="block w-full max-h-[73vh] overflow-visible group-[.is-active]/avatar:animate-[avatar-activate_700ms_cubic-bezier(.2,.8,.2,1)]"
-      viewBox="0 0 540 620"
+      viewBox="0 0 420 560"
+      xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Avatar illustré de Serigne Abdou Khadre Mbacké SANKHARE"
+      aria-label="Avatar 3D personnalisé"
+      className="block w-full max-h-[73vh] overflow-visible"
     >
-      <path className="fill-[rgba(79,130,255,.1)] stroke-acid stroke-1 [stroke-dasharray:8_9] animate-[avatar-orbit_8s_linear_infinite] group-[.is-active]/avatar:stroke-aqua group-[.is-active]/avatar:animate-[avatar-orbit_3.5s_linear_infinite]" d="M78 312c0-152 90-244 218-244 121 0 197 82 197 207 0 161-109 284-261 284C126 559 78 462 78 312Z" />
-      <g className="[transform-box:fill-box] origin-top-right [transition:transform_250ms_ease] group-hover/avatar:[transform:translateY(-3px)_rotate(2deg)] group-[.is-active]/avatar:animate-[avatar-left-pump_1.2s_ease-in-out_infinite]">
-        <path className="fill-[#171b25] stroke-[#6f7787] stroke-2" d="M176 430c-45 8-75 45-88 99l45 18c15-39 39-59 75-67l-32-50Z" />
-        <path className="fill-[#75472f] stroke-[#321e17] stroke-2" d="M88 521c-12 9-18 28-9 42 8 13 28 16 42 8 12-7 18-20 13-33-6-17-29-27-46-17Z" />
-        <path className="fill-none stroke-[#4c2d22] stroke-[2.5] [stroke-linecap:round]" d="M88 541c12-8 25-6 36 3" />
+      <defs>
+        {/* Skin */}
+        <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#a9684e" />
+          <stop offset="45%" stopColor="#75422f" />
+          <stop offset="100%" stopColor="#48291f" />
+        </linearGradient>
+
+        <linearGradient id="skinLight" x1="0" y1="0" x2="0.8" y2="1">
+          <stop offset="0%" stopColor="#c48768" />
+          <stop offset="100%" stopColor="#75432f" />
+        </linearGradient>
+
+        {/* Hair */}
+        <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#34302d" />
+          <stop offset="50%" stopColor="#151313" />
+          <stop offset="100%" stopColor="#08090b" />
+        </linearGradient>
+
+        {/* Beard */}
+        <linearGradient id="beard" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#30221d" />
+          <stop offset="50%" stopColor="#171211" />
+          <stop offset="100%" stopColor="#080809" />
+        </linearGradient>
+
+        {/* Headphones */}
+        <linearGradient id="headphone" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#08090c" />
+          <stop offset="50%" stopColor="#42434a" />
+          <stop offset="100%" stopColor="#08090c" />
+        </linearGradient>
+
+        {/* Clothes */}
+        <linearGradient id="hoodie" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#777982" />
+          <stop offset="50%" stopColor="#343944" />
+          <stop offset="100%" stopColor="#171b25" />
+        </linearGradient>
+
+        {/* Glasses */}
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity=".22" />
+          <stop offset="100%" stopColor="#b9d8e5" stopOpacity=".04" />
+        </linearGradient>
+
+        <radialGradient id="faceLight">
+          <stop offset="0%" stopColor="#d99b77" stopOpacity=".4" />
+          <stop offset="100%" stopColor="#d99b77" stopOpacity="0" />
+        </radialGradient>
+
+        <filter id="shadow">
+          <feGaussianBlur stdDeviation="8" />
+        </filter>
+
+        <filter id="soft">
+          <feGaussianBlur stdDeviation="3" />
+        </filter>
+
+        <clipPath id="faceClip">
+          <path d="
+            M104 179
+            Q105 105 210 91
+            Q315 105 316 179
+            L307 269
+            Q300 344 210 366
+            Q120 344 113 269Z
+          " />
+        </clipPath>
+      </defs>
+
+      {/* Background glow */}
+      <ellipse
+        cx="210"
+        cy="290"
+        rx="185"
+        ry="220"
+        fill="#8b36a8"
+        opacity=".09"
+        filter="url(#shadow)"
+      />
+
+      {/* Ground shadow */}
+      <ellipse
+        cx="210"
+        cy="536"
+        rx="130"
+        ry="14"
+        fill="#000"
+        opacity=".3"
+        filter="url(#shadow)"
+      />
+
+      {/* Body */}
+      <g className="origin-bottom transition-transform duration-500 hover:translate-y-1">
+
+        {/* Hoodie */}
+        <path
+          d="
+            M70 560
+            Q76 443 142 414
+            L176 394
+            L210 438
+            L244 394
+            L278 414
+            Q344 443 350 560Z
+          "
+          fill="url(#hoodie)"
+          stroke="#252a34"
+          strokeWidth="2"
+        />
+
+        {/* Shoulder highlights */}
+        <path
+          d="M79 506 Q100 440 153 426"
+          fill="none"
+          stroke="#9a9da6"
+          strokeWidth="3"
+          opacity=".25"
+        />
+
+        <path
+          d="M341 506 Q320 440 267 426"
+          fill="none"
+          stroke="#9a9da6"
+          strokeWidth="3"
+          opacity=".2"
+        />
+
+        {/* Hood */}
+        <path
+          d="
+            M143 405
+            Q119 388 143 371
+            L176 382
+            L210 431
+            L244 382
+            L277 371
+            Q301 388 277 405
+            L244 460
+            L210 438
+            L176 460Z
+          "
+          fill="#747781"
+          stroke="#3a3e47"
+          strokeWidth="3"
+        />
+
+        {/* Neck */}
+        <path
+          d="M174 330 L174 416 Q210 448 246 416 L246 330Z"
+          fill="url(#skin)"
+        />
+
+        {/* Neck shadow */}
+        <path
+          d="M174 355 Q210 399 246 355 L246 405 Q210 431 174 405Z"
+          fill="#42251e"
+          opacity=".35"
+        />
+
+        {/* Hoodie strings */}
+        <path d="M177 426 L183 512" stroke="#c4c4c4" strokeWidth="2.5" />
+        <path d="M243 426 L237 512" stroke="#c4c4c4" strokeWidth="2.5" />
+        <circle cx="183" cy="513" r="3.5" fill="#bfc0c4" />
+        <circle cx="237" cy="513" r="3.5" fill="#bfc0c4" />
       </g>
-      <g className="[transform-box:fill-box] [transform-origin:405px_475px] animate-[avatar-idle-wave_7s_ease-in-out_infinite] group-[:not(.is-active):hover]/avatar:animate-[avatar-idle-wave_3.2s_ease-in-out_infinite] group-[.is-active]/avatar:animate-[avatar-active-wave_800ms_ease-in-out_infinite]">
-        <path className="fill-[#171b25] stroke-[#6f7787] stroke-2" d="M374 464c32-10 48-42 54-85l41 7c-1 58-21 100-62 122l-33-44Z" />
-        <path className="fill-[#75472f] stroke-[#321e17] stroke-2" d="M424 390c-5-24-7-62 2-64 9-2 11 27 12 39l2-53c1-10 14-9 15 1l1 49 8-44c2-10 15-7 13 3l-5 45 11-30c4-9 16-4 12 6l-15 49c-6 22-19 34-38 32-15-2-22-17-18-33Z" />
-        <path className="fill-none stroke-[#4c2d22] stroke-[2.5] [stroke-linecap:round]" d="M438 364l1 28M456 362l-2 31M473 366l-5 29" />
+
+      {/* Headphone arch */}
+      <g>
+        <path
+          d="M74 214 C49 -12 371 -12 346 214"
+          fill="none"
+          stroke="#090a0d"
+          strokeWidth="25"
+          strokeLinecap="round"
+        />
+
+        <path
+          d="M74 214 C49 -12 371 -12 346 214"
+          fill="none"
+          stroke="#62636a"
+          strokeWidth="5"
+          strokeLinecap="round"
+          opacity=".7"
+        />
+
+        <path
+          d="M83 180 C72 24 348 24 337 180"
+          fill="none"
+          stroke="#292a30"
+          strokeWidth="4"
+        />
+
+        {/* Left ear cup */}
+        <rect
+          x="43" y="177" width="52" height="126"
+          rx="21"
+          fill="url(#headphone)"
+          stroke="#77777e"
+          strokeWidth="3"
+        />
+
+        <rect
+          x="50" y="191" width="38" height="99"
+          rx="15"
+          fill="#16171c"
+        />
+
+        {/* Right ear cup */}
+        <rect
+          x="325" y="177" width="52" height="126"
+          rx="21"
+          fill="url(#headphone)"
+          stroke="#77777e"
+          strokeWidth="3"
+        />
+
+        <rect
+          x="332" y="191" width="38" height="99"
+          rx="15"
+          fill="#16171c"
+        />
+
+        <path d="M56 199 L56 278" stroke="#777982" strokeWidth="2" opacity=".5" />
+        <path d="M364 199 L364 278" stroke="#777982" strokeWidth="2" opacity=".5" />
+
+        <circle cx="69" cy="240" r="3" fill="#92949c" />
+        <circle cx="351" cy="240" r="3" fill="#92949c" />
       </g>
-      <path className="fill-[#171b25] stroke-[#6f7787] stroke-2" d="M98 593c13-138 75-212 177-212 111 0 174 78 184 212H98Z" />
-      <path className="fill-[#75472f] stroke-[#0b0c10] stroke-2" d="M228 344h93v97h-93z" />
-      <g className="[transform-box:fill-box] origin-bottom [transform:rotate(var(--tilt-y))_translateY(var(--look-y))] [transition:transform_100ms_linear] group-[.is-active]/avatar:animate-[avatar-nod_900ms_ease-in-out]">
-        <path className="fill-[#75472f] stroke-[#0b0c10] stroke-2" d="M169 224c-38-6-47 56-9 75l28-3-4-66-15-6ZM374 224c38-6 47 56 9 75l-28-3 4-66 15-6Z" />
-        <path className="fill-[#75472f] stroke-[#0b0c10] stroke-2" d="M182 174c21-57 168-60 188 10l-8 101c-5 63-42 104-88 104-48 0-84-43-89-104l-3-111Z" />
-        <path className="fill-[#0d0e11] stroke-[#6e4938] stroke-2" d="M174 232c-15-93 31-151 105-151 76 0 116 57 99 151l-18 11-5-78c-49 20-98 14-149-1l-8 79-24-11Z" />
-        <path className="fill-none stroke-[#3d2a24] stroke-5 [stroke-linecap:round]" d="M188 165c36-7 52-27 63-61M220 169c35-11 57-35 65-70M257 165c29-10 48-31 58-61M296 163c21-7 37-22 47-43" />
-        <path className="fill-none stroke-[#241710] stroke-4 [stroke-linecap:round]" d="M211 228c16-10 32-10 47-2M294 226c15-8 30-8 44 2" />
-        <g className="fill-[#f4f7fa] [transform-box:fill-box] origin-center animate-[avatar-blink_6s_ease-in-out_infinite]">
-          <ellipse cx="230" cy="255" rx="17" ry="9" />
-          <ellipse cx="319" cy="255" rx="17" ry="9" />
-          <g className="fill-[#11151d] [transform:translate(var(--look-x),var(--look-y))] [transition:transform_80ms_linear]">
-            <circle cx="230" cy="255" r="5" />
-            <circle cx="319" cy="255" r="5" />
-          </g>
+
+      {/* Ears */}
+      <path
+        d="M112 220 Q75 190 81 250 Q85 283 119 280Z"
+        fill="url(#skinLight)"
+      />
+
+      <path
+        d="M308 220 Q345 190 339 250 Q335 283 301 280Z"
+        fill="url(#skinLight)"
+      />
+
+      {/* Face */}
+      <g className="origin-center animate-[avatar-nod_7s_ease-in-out_infinite]">
+
+        <path
+          d="
+            M104 179
+            Q105 105 210 91
+            Q315 105 316 179
+            L307 269
+            Q300 344 210 366
+            Q120 344 113 269Z
+          "
+          fill="url(#skin)"
+        />
+
+        {/* Face lighting */}
+        <g clipPath="url(#faceClip)">
+          <ellipse
+            cx="167" cy="220" rx="90" ry="130"
+            fill="url(#faceLight)"
+          />
+
+          <ellipse
+            cx="290" cy="250" rx="42" ry="110"
+            fill="#28140f"
+            opacity=".17"
+            filter="url(#soft)"
+          />
+
+          <ellipse
+            cx="126" cy="275" rx="34" ry="25"
+            fill="#dc9474"
+            opacity=".18"
+            filter="url(#soft)"
+          />
+
+          <ellipse
+            cx="294" cy="275" rx="34" ry="25"
+            fill="#dc9474"
+            opacity=".18"
+            filter="url(#soft)"
+          />
+
+          {/* Skin texture */}
+          {Array.from({ length: 32 }, (_, i) => (
+            <circle
+              key={i}
+              cx={125 + ((i * 37) % 170)}
+              cy={175 + ((i * 23) % 145)}
+              r={i % 3 === 0 ? 1.1 : 0.6}
+              fill="#f0b092"
+              opacity=".22"
+            />
+          ))}
         </g>
-        <path className="fill-[rgba(78,217,255,.13)] stroke-aqua stroke-3" d="M196 239c20-6 43-6 67 1l-2 34c-20 10-42 10-60-2l-5-33ZM285 240c23-7 46-7 67-1l-5 33c-18 12-40 12-60 2l-2-34ZM263 247h22" />
-        <path className="fill-none stroke-[rgba(255,255,255,.75)] stroke-2 [stroke-linecap:round] [stroke-dasharray:8_36] animate-[avatar-glint_4s_ease-in-out_infinite]" d="M204 246c13-7 28-8 43-3M294 246c13-7 28-8 43-3" />
-        <path className="fill-none stroke-[#241710] stroke-4 [stroke-linecap:round]" d="M274 250l-8 51 20 3" />
-        <path className="fill-none stroke-[#241710] stroke-4 [stroke-linecap:round] group-hover/avatar:stroke-[#d09a7e]" d="M245 331c19 12 41 12 61 0" />
+
+        {/* Forehead */}
+        <path
+          d="M141 158 Q210 130 279 158"
+          fill="none"
+          stroke="#d69b79"
+          strokeWidth="3"
+          opacity=".18"
+        />
+
+        {/* Eyebrows */}
+        <path
+          d="M127 202 Q153 181 188 198 Q171 210 130 211Z"
+          fill="#181211"
+        />
+
+        <path
+          d="M232 198 Q267 181 293 202 L290 211 Q249 210 232 198Z"
+          fill="#181211"
+        />
+
+        {/* Eyes */}
+        <g className="origin-center animate-[avatar-blink_6s_ease-in-out_infinite]">
+
+          <path
+            d="M130 236 Q157 216 189 236 Q160 254 130 236Z"
+            fill="#f1d6c6"
+          />
+
+          <path
+            d="M231 236 Q263 216 290 236 Q260 254 231 236Z"
+            fill="#f1d6c6"
+          />
+
+          <ellipse cx="161" cy="235" rx="10" ry="13" fill="#30231e" />
+          <ellipse cx="260" cy="235" rx="10" ry="13" fill="#30231e" />
+
+          <circle cx="161" cy="235" r="5.5" fill="#080808" />
+          <circle cx="260" cy="235" r="5.5" fill="#080808" />
+
+          <circle cx="165" cy="230" r="3" fill="#fff" />
+          <circle cx="264" cy="230" r="3" fill="#fff" />
+
+          <path
+            d="M130 236 Q157 216 189 236"
+            fill="none"
+            stroke="#251714"
+            strokeWidth="3"
+          />
+
+          <path
+            d="M231 236 Q263 216 290 236"
+            fill="none"
+            stroke="#251714"
+            strokeWidth="3"
+          />
+        </g>
+
+        {/* Nose */}
+        <path
+          d="M207 237 Q202 267 188 291 Q199 301 221 292"
+          fill="none"
+          stroke="#4c2a20"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+          opacity=".8"
+        />
+
+        <path
+          d="M190 294 Q208 305 225 293"
+          fill="none"
+          stroke="#3d211b"
+          strokeWidth="3"
+        />
+
+        <ellipse
+          cx="191" cy="292" rx="9" ry="4"
+          fill="#d69a7b"
+          opacity=".35"
+        />
+
+        {/* Beard - short jawline beard */}
+        <path
+          d="
+            M116 277
+            Q106 281 114 312
+            Q126 347 159 357
+            Q182 370 210 371
+            Q238 370 261 357
+            Q294 347 306 312
+            Q314 281 304 277
+            Q299 307 275 318
+            Q256 337 210 340
+            Q164 337 145 318
+            Q121 307 116 277Z
+          "
+          fill="url(#beard)"
+        />
+
+        {/* Beard contour */}
+        <path
+          d="M119 294 Q131 340 171 350"
+          fill="none"
+          stroke="#594037"
+          strokeWidth="3"
+          opacity=".5"
+        />
+
+        <path
+          d="M301 294 Q289 340 249 350"
+          fill="none"
+          stroke="#594037"
+          strokeWidth="3"
+          opacity=".5"
+        />
+
+        {/* Chin */}
+        <path
+          d="M164 347 Q210 373 256 347 Q247 381 210 384 Q173 381 164 347Z"
+          fill="#171211"
+          opacity=".8"
+        />
+
+        {/* Mustache */}
+        <path
+          d="
+            M177 306
+            Q192 292 210 306
+            Q228 292 243 306
+            Q235 321 210 316
+            Q185 321 177 306Z
+          "
+          fill="#171211"
+        />
+
+        {/* Mouth */}
+        <path
+          d="M190 328 Q210 338 230 328"
+          fill="none"
+          stroke="#d68e78"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+
+        <path
+          d="M194 333 Q210 340 226 333"
+          fill="none"
+          stroke="#4b2925"
+          strokeWidth="1.5"
+        />
+
       </g>
-      <path className="fill-none stroke-[#5a6271] stroke-2" d="M228 409l47 60 46-60M275 469v124" />
-      <path className="fill-none stroke-acid stroke-5 group-hover/avatar:[filter:drop-shadow(0_0_8px_var(--color-acid))]" d="m146 495 58 21M403 495l-58 21" />
-      <circle className="fill-acid [filter:drop-shadow(0_0_8px_var(--color-acid))] group-[.is-active]/avatar:animate-[avatar-pin-pulse_1.3s_ease-in-out_infinite]" cx="406" cy="128" r="8" />
-      <path className="fill-none stroke-acid stroke-1 [stroke-dasharray:90] animate-[avatar-scan_3.5s_ease-in-out_infinite]" d="M57 188h85M402 333h91M420 354h48" />
+
+      {/* Hair */}
+      <g>
+        <path
+          d="
+            M102 192
+            Q80 119 116 76
+            Q148 39 210 46
+            Q276 39 306 78
+            Q341 122 318 193
+            L306 205
+            Q306 137 281 113
+            Q248 133 211 122
+            Q163 143 128 115
+            Q109 146 114 205Z
+          "
+          fill="url(#hair)"
+        />
+
+        {/* Hair texture */}
+        <g fill="none" strokeLinecap="round">
+          <path d="M117 113 Q146 56 194 54" stroke="#5c514a" strokeWidth="3" opacity=".5" />
+          <path d="M143 111 Q175 47 226 55" stroke="#77655b" strokeWidth="3" opacity=".4" />
+          <path d="M174 117 Q207 58 260 73" stroke="#5e5149" strokeWidth="4" opacity=".5" />
+          <path d="M207 115 Q242 73 285 96" stroke="#76665c" strokeWidth="3" opacity=".45" />
+          <path d="M237 117 Q267 91 297 122" stroke="#54473f" strokeWidth="3" opacity=".5" />
+        </g>
+      </g>
+
+      {/* Glasses */}
+      <g>
+        {/* Left frame */}
+        <path
+          d="
+            M112 218
+            Q148 207 190 220
+            L190 259
+            Q188 283 165 287
+            L140 285
+            Q116 281 113 255Z
+          "
+          fill="url(#glass)"
+          stroke="#101115"
+          strokeWidth="7"
+        />
+
+        {/* Right frame */}
+        <path
+          d="
+            M230 220
+            Q272 207 308 218
+            L307 255
+            Q304 281 280 285
+            L255 287
+            Q232 283 230 259Z
+          "
+          fill="url(#glass)"
+          stroke="#101115"
+          strokeWidth="7"
+        />
+
+        {/* Frame reflections */}
+        <path
+          d="M122 226 Q148 217 176 224"
+          stroke="#a9bac3"
+          strokeWidth="2"
+          fill="none"
+          opacity=".65"
+        />
+
+        <path
+          d="M242 224 Q270 217 296 226"
+          stroke="#a9bac3"
+          strokeWidth="2"
+          fill="none"
+          opacity=".65"
+        />
+
+        {/* Bridge */}
+        <path
+          d="M190 226 Q210 213 230 226"
+          fill="none"
+          stroke="#101115"
+          strokeWidth="7"
+        />
+
+        {/* Temples */}
+        <path d="M112 225 L82 215" stroke="#101115" strokeWidth="7" />
+        <path d="M308 225 L338 215" stroke="#101115" strokeWidth="7" />
+      </g>
+
+      {/* Ambient highlights */}
+      <path
+        d="M64 350 Q30 210 78 112"
+        stroke="#b58aff"
+        strokeWidth="2"
+        fill="none"
+        opacity=".15"
+      />
+
+      <path
+        d="M356 350 Q390 210 342 112"
+        stroke="#64dfff"
+        strokeWidth="2"
+        fill="none"
+        opacity=".12"
+      />
+
     </svg>
   );
 }
