@@ -41,3 +41,9 @@ Tout le style est écrit en classes utilitaires dans le JSX. Il n'y a plus de fi
 
 Pour modifier le contenu (expériences, projets, stack, coordonnées), éditer les fichiers de `src/data/`.
 L'alias `@` pointe vers `src/` (ex. `import Link from "@/components/ui/Link"`).
+
+## Portrait du Hero
+
+Le portrait est intégré dans `public/images/avatar.png`. Il s'agit d'un PNG RGBA avec transparence : ne lui ajoutez pas de fond. Le composant `src/components/Avatar/Avatar.jsx` ajoute uniquement un halo bleu derrière l'image et un fondu discret en bas pour la raccorder au fond du Hero.
+
+Pour remplacer le portrait, conservez le nom `avatar.png` et placez le nouveau PNG transparent dans `public/images/`.

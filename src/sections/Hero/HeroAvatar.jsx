@@ -17,12 +17,12 @@ export default function HeroAvatar() {
 
   return (
     <div
-      className={`group/avatar relative z-2 w-[min(42vw,34rem)] origin-bottom animate-avatar-float cursor-crosshair self-end justify-self-center [--look-x:0px] [--look-y:0px] [--tilt-x:0deg] [--tilt-y:0deg] focus-visible:rounded-[45%] focus-visible:outline-1 focus-visible:outline-offset-[.7rem] focus-visible:outline-aqua phone:w-[min(100%,28rem)] ${active ? "is-active" : ""}`}
+      className={`group/avatar relative z-2 w-[min(40vw,33rem)] origin-bottom animate-avatar-float cursor-crosshair self-end justify-self-center [--look-x:0px] [--look-y:0px] [--tilt-x:0deg] [--tilt-y:0deg] focus-visible:rounded-[45%] focus-visible:outline-1 focus-visible:outline-offset-[.7rem] focus-visible:outline-aqua tablet:w-[min(46vw,29rem)] phone:w-[min(100%,25rem)] ${active ? "is-active" : ""}`}
       ref={ref}
       {...handlers}
       role="button"
       tabIndex={0}
-      aria-label="Activer l’animation de l’avatar"
+      aria-label="Afficher le message de bienvenue du portrait"
     >
       <span className={`${LABEL} top-[13%] right-0`}>PROFILE_01</span>
       <Avatar />
